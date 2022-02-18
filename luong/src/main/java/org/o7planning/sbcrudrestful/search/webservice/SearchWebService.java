@@ -4,6 +4,8 @@ import org.o7planning.sbcrudrestful.search.dto.SearchRequest;
 import org.o7planning.sbcrudrestful.search.dto.SearchResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -20,7 +22,7 @@ public class SearchWebService  {
 	@Autowired
 	//IProcessor proc = null;
 
-	@RequestMapping(value = "procSearch", consumes = "application/json;charset=UTF-8", produces = "application/json;charset=UTF-8", method = RequestMethod.POST)
+	@RequestMapping(value = "procSearch", consumes = "application/json;charset=UTF-8", produces = "application/json;charset=UTF-8", method = RequestMethod.POST)	
 	@ResponseBody
 	public SearchResponse process(@RequestBody SearchRequest request) {
 		return (SearchResponse) process(request);

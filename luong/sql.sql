@@ -16,6 +16,30 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
+-- Table structure for table `status`
+--
+
+DROP TABLE IF EXISTS `status`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `status` (
+  `starus_id` int NOT NULL,
+  `name` varchar(45) DEFAULT NULL,
+  PRIMARY KEY (`starus_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `status`
+--
+
+LOCK TABLES `status` WRITE;
+/*!40000 ALTER TABLE `status` DISABLE KEYS */;
+INSERT INTO `status` VALUES (1,'Lập kế hoạch'),(2,'đang thực hiện'),(3,'Hoàn thành');
+/*!40000 ALTER TABLE `status` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `time_to_doing`
 --
 
@@ -38,7 +62,7 @@ CREATE TABLE `time_to_doing` (
 
 LOCK TABLES `time_to_doing` WRITE;
 /*!40000 ALTER TABLE `time_to_doing` DISABLE KEYS */;
-INSERT INTO `time_to_doing` VALUES (2,'đi làm','11/18/2020','11/12/2022','đang thực hiện'),(3,'chơi game','11/18/2020','11/12/2022','lập kết hoạch'),(4,'chơi game','11/18/2020','11/12/2022','lập kết hoạch'),(5,'chơi game','11/18/2020','11/12/2022','lập kết hoạch'),(6,'chơi game','11/18/2020','11/12/2022','lập kết hoạch'),(7,'chơi game','11/18/2020','11/12/2022','lập kết hoạch'),(8,'học java','11/18/2020','11/12/2022','lập kết hoạch'),(9,'học android','11/18/2020','11/12/2022','lập kết hoạch'),(10,'học C#','11/18/2020','11/12/2022','lập kết hoạch'),(11,'học C++','11/18/2020','11/12/2022','lập kết hoạch'),(12,'học nhúng','11/18/2020','11/12/2022','lập kết hoạch'),(13,'học anh văn','11/18/2020','11/12/2022','lập kết hoạch'),(14,'học tiêng nhật','11/18/2020','11/12/2022','lập kết hoạch'),(15,'học ghita','11/18/2020','11/12/2022','lập kết hoạch'),(16,'học nhảy','11/18/2020','11/12/2022','lập kết hoạch');
+INSERT INTO `time_to_doing` VALUES (2,'đi làm','11/18/2020','11/12/2022','1'),(3,'chơi game','11/18/2020','11/12/2022','2'),(4,'chơi game','11/18/2020','11/12/2022','3'),(5,'chơi game','11/18/2020','11/12/2022','1'),(6,'chơi game','11/18/2020','11/12/2022','2'),(7,'chơi game','11/18/2020','11/12/2022','3'),(8,'học java','11/18/2020','11/12/2022','1'),(9,'học android','11/18/2020','11/12/2022','3'),(10,'học C#','11/18/2020','11/12/2022','2'),(11,'học C++','11/18/2020','11/12/2022','2'),(12,'học nhúng','11/18/2020','11/12/2022','1'),(13,'học anh văn','11/18/2020','11/12/2022','2'),(14,'học tiêng nhật','11/18/2020','11/12/2022','3'),(15,'học ghita','11/18/2020','11/12/2022','3'),(16,'học nhảy','11/18/2020','11/12/2022','1');
 /*!40000 ALTER TABLE `time_to_doing` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -51,4 +75,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-02-17 17:03:19
+-- Dump completed on 2022-02-18 10:28:38

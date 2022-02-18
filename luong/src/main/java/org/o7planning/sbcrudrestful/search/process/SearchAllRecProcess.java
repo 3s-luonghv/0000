@@ -14,6 +14,7 @@ import org.o7planning.sbcrudrestful.dto.SearchDto;
 import org.o7planning.sbcrudrestful.dto.ValidateUtility;
 import org.o7planning.sbcrudrestful.search.dto.SearchRequest;
 import org.o7planning.sbcrudrestful.search.dto.SearchResponse;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
 /**
@@ -47,16 +48,17 @@ public class SearchAllRecProcess<DBStatement >  {
 			// SQL Query
 			String strSql = "";
 			strSql +=" SELECT ";
-			strSql +=" name, limmitdate, proddate, status ";
+			strSql +=" SELECT time_to_doing.name,time_to_doing.limmitdate,time_to_doing.proddate ,status.name ";
 			strSql +=" FROM  ";
-			strSql +="  time_to_doing ";			
+			strSql +="  time_to_doing ";	
+			strSql +="  inner join status on time_to_doing.status = status.starus_id ";
 			strSql +=" WHERE  ";
 			if (!ValidateUtility.CheckNull(name)){
-				strSql += "name like  ?  ";
+				strSql += "time_to_doing.name like  ?  ";
 			}			
 			//業務種別
 			if (!ValidateUtility.CheckNull(status)){
-				strSql +=" and status =?   ";
+				strSql +=" and status.name =?   ";
 			}	
 			strSql +=(" ;");
 			 Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/data", "root", "123456");
